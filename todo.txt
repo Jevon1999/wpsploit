@@ -1,0 +1,7 @@
+clone templates
+
+fitur:
+1. auto exploit via plugin (like a bub)
+2. vuln scanner with auto exploit cve -> exploitDB
+3. exploit tools from cves tipe
+4. 
