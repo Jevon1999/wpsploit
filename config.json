@@ -1,0 +1,39 @@
+{
+    "exploitdb_gitlab": {
+        "repo_url": "https://gitlab.com/exploit-database/exploitdb.git",
+        "cache_dir": "cache/exploitdb",
+        "auto_update": true,
+        "update_interval_hours": 24
+    },
+    "cache": {
+        "cache_dir": "cache",
+        "max_age_days": 30,
+        "cleanup_on_start": true
+    },
+    "wordpress": {
+        "platforms": ["webapps", "php"],
+        "keywords": ["wordpress", "wp"]
+    },
+    "exploit": {
+        "timeout_seconds": 30,
+        "max_retries": 3,
+        "retry_delay_seconds": 2,
+        "max_exploits_per_cve": 3
+    },
+    "nuclei": {
+        "binary_path": "nuclei",
+        "templates_dir": "nuclei-wordfence-cve/nuclei-templates",
+        "scan_timeout": 300
+    },
+    "output": {
+        "results_dir": "results",
+        "save_progress": true,
+        "detailed_output": true
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "logs/wp_autoexploit.log",
+        "console_output": true,
+        "file_output": true
+    }
+}

@@ -8,6 +8,11 @@ Isi: Parsing argumen, inisialisasi logger, scanner, exploiter. Jika mode interak
 import argparse
 import sys
 import logging
+from pathlib import Path
+
+# Add src directory to Python path
+sys.path.insert(0, str(Path(__file__).parent / "src"))
+
 from scanner import Scanner
 from exploiter import Exploiter
 from utils import Logger
@@ -34,7 +39,6 @@ def main():
     log_level = getattr(logging, settings.get('logging.level', 'INFO'))
     
     # Create logs directory
-    from pathlib import Path
     Path(log_file).parent.mkdir(parents=True, exist_ok=True)
     
     logger = Logger(level=log_level, log_file=log_file)
